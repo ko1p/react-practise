@@ -1,11 +1,15 @@
 import React from 'react'
 import classes from './Quiz.module.css'
 import ActiveQuiz from '../../components/ActiveQuize/ActiveQuize'
+import FinnishedQuiz from '../../components/FinnishedQuiz/FinnishedQuiz'
 
 class Quiz extends React.Component {
 
     state = {
+        results: {},
         activeQuestion: 0,
+        isFinnished: false,
+        answerState: null,
         quiz: [
             {
                 question: 'Какого цвета небо?',
@@ -33,8 +37,52 @@ class Quiz extends React.Component {
     }
 
     onAnswerClickHandler = (answerId) => {
-        console.log(answerId)
-        this.setState({activeQuestion: this.state.activeQuestion + 1})
+        if (this.state.answerState) {
+            const key = Object.keys(this.state.answerState)
+            if (this.state.answerState[key] === 'success') {
+                return
+            }
+        }
+
+        const question = this.state.quiz[this.state.activeQuestion];
+        const results = this.state.results
+  
+        if (question.rightAnswerId === answerId) {
+
+            if (!results[answerId]) {
+                results[answerId] = 'success'
+
+            }
+
+            this.setState({
+                answerState: {[answerId]: 'success'},
+                results
+            })
+
+            const timeout = window.setTimeout(() => {
+                if (this.isQuizeFinnished()) {
+                    this.setState({isFinnished: true})
+                } else {
+                    this.setState({activeQuestion: this.state.activeQuestion + 1})
+                }
+                this.setState({
+                    answerState: null
+                })
+                window.clearTimeout(timeout)
+            }, 1000)
+            
+        } else {
+            results[answerId] = 'error'
+            this.setState({ 
+                answerState: {[answerId]: 'error'},
+                results
+            })
+        }
+
+    }
+
+    isQuizeFinnished = () => {
+        return this.state.activeQuestion + 1 === this.state.quiz.length;
     }
 
     render() {
@@ -42,13 +90,21 @@ class Quiz extends React.Component {
             <div className={classes.Quiz}>
                 <div className={classes.QuizWrapper}>
                     <h1>Ответьте на все вопросы</h1>
-                    <ActiveQuiz 
+                    {
+                        this.state.isFinnished 
+                        ? <FinnishedQuiz 
+                        results={this.state.results}
+                        quize={this.state.quiz}
+                        />
+                        : <ActiveQuiz 
                         question={this.state.quiz[this.state.activeQuestion].question}
                         answers={this.state.quiz[this.state.activeQuestion].answers}
                         onAnswerClick={this.onAnswerClickHandler}
                         quizLength={this.state.quiz.length}
                         answerNumber={this.state.activeQuestion + 1}
+                        state={this.state.answerState}
                     />
+                    }                    
                 </div>
             </div>
         )
