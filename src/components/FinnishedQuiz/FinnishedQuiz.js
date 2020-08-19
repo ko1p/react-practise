@@ -9,7 +9,6 @@ const FinnishedQuiz = (props) => {
         }
         return total 
     }, 0)
-    console.log(successCount)
 
     return(
         <div className={classes.FinnishedQuiz}>
@@ -35,9 +34,9 @@ const FinnishedQuiz = (props) => {
                 }) 
                 }
             </ul>
-            <p>Правильно 4 из {props.question.length}</p>
+            <p>Правильно {successCount} из {props.quize.length}</p>
             <div>
-                <button>Повторить</button>
+                <button onClick={props.onRetry}>Повторить</button>
             </div>
         </div>
     )
