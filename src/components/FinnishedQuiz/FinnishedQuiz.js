@@ -2,6 +2,15 @@ import React from 'react'
 import classes from './FinnishedQuiz.module.css'
 
 const FinnishedQuiz = (props) => {
+
+    const successCount = Object.keys(props.results).reduce((total, key) => {
+        if (props.results[key] === 'success') {
+            total++
+        }
+        return total 
+    }, 0)
+    console.log(successCount)
+
     return(
         <div className={classes.FinnishedQuiz}>
             <ul>
@@ -25,19 +34,8 @@ const FinnishedQuiz = (props) => {
                     )
                 }) 
                 }
-
-                {/* <li>
-                    <strong>1.</strong>
-                    How are u?
-                    <i className={'fa fa-times ' + classes.error} />
-                </li>
-                <li>
-                    <strong>2.</strong>
-                    How are u?
-                    <i className={'fa fa-check ' + classes.success} />
-                </li> */}
             </ul>
-            <p>Правильно 4 из 10</p>
+            <p>Правильно 4 из {props.question.length}</p>
             <div>
                 <button>Повторить</button>
             </div>
