@@ -26,3 +26,8 @@ padding: 20px;
 .nav li {
     margin-right: 15px;
 }
+
+.nav li a.active, a.link-active {
+    font-weight: bold;
+    color: red
+}
