@@ -1,17 +1,31 @@
-import React from 'react';
-import Layout from './hoc/Layout/Layout'
-import Quiz from './containers/Quiz/Quiz'
+import React, {Component} from 'react'
+import './App.css'
+import About from './About/About'
+import Cars from './Cars/Cars'
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+  render() {
 
-      <Layout>
-          <Quiz />
-      </Layout>
+    return (
+      <div>
+        <nav className="nav">
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+          </ul>
+        </nav>
 
-    </div>
-  );
+        <hr/>
+        <About />
+
+        <Cars />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default App
