@@ -1,12 +1,18 @@
 import React, {Component} from 'react'
-import {Route, NavLink} from 'react-router-dom'
+import {Route, NavLink, Switch, Redirect} from 'react-router-dom'
 import './App.css'
 import About from './About/About'
 import Cars from './Cars/Cars'
+import CarDetail from './CarDetail/CarDetail'
 
 class App extends Component {
-  render() {
 
+  state = {
+    isLoggedIn: false
+  }
+
+
+  render() {
     return (
       <div>
         <nav className="nav">
@@ -28,9 +34,7 @@ class App extends Component {
             <li>
               <NavLink 
               to={{
-                pathname: '/cars',
-                search: '?a=1&b=2',
-                hash: 'wfm-hash'
+                pathname: '/cars'
               }}
               >Cars</NavLink>
             </li>
@@ -38,24 +42,41 @@ class App extends Component {
         </nav>
 
         <hr/>
+        
+        <Switch>
+          <Route 
+            path='/'
+            exact
+            render={() => <h1 style={{textAlign: 'center'}}>Home page</h1>}
+          />
 
-        <Route 
-          path='/'
-          exact
-          render={() => <h1>Home page</h1>}
-        />
+          { this.state.isLoggedIn ? <Route path='/about' component={About}/> : null
+          }
 
-        <Route 
-          path='/about'
 
-          component={About}
-        />
+          <Route 
+            path='/cars'
+            exact
+            component={Cars}
+          /> 
 
-        <Route 
-          path='/cars'
-          component={Cars}
-        /> 
+          <Route 
+            path='/cars/:name'
+            exact
+            component={CarDetail}
+          /> 
 
+          <Redirect 
+            to='/'
+          />
+          {/* <Route 
+            render={() => <h1 style={{color: 'red', textAlign: 'center'}}>404 NOT FOUND</h1>}
+          />  */}
+        </Switch>
+          <div style={{textAlign: 'center'}}>
+            <h3>Is i logged in now? {this.state.isLoggedIn ? 'answer: TRUE' : 'answer: FALSE'}</h3>
+            <button onClick={() => this.setState({isLoggedIn: !this.state.isLoggedIn})}>TOGGLE LOGIN STATUS</button>
+          </div>
       </div>
     );
   }
