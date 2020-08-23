@@ -54,10 +54,38 @@ export default class QuizCreator extends React.Component {
 
     addQuestionHandler = (event) => {
         event.preventDefault()
+
+        const quiz = [...this.state.quiz]
+        const index = quiz.length + 1
+
+        const { question, option1, option2, option3, option4 } = this.state.formControls
+
+        const questionItem = {
+            question: question.value,
+            id: index,
+            rightAnswerId: this.state.rightAnswerId,
+            answers: [
+                {text: option1.value, id: option1.id},
+                {text: option2.value, id: option2.id},
+                {text: option3.value, id: option3.id},
+                {text: option4.value, id: option4.id}
+            ]
+        }
+
+        quiz.push(questionItem)
+
+        this.setState({
+            quiz,
+            isValidForm: false,
+            rightAnswerId: 1,
+            formControls: createFormControls()
+        })
+
     }
 
-    createQuizeHandler = () => {
-
+    createQuizeHandler = (event) => {
+        event.preventDefault()
+        console.log(this.state.quiz)
     }
 
     changeHandler = (value, controlName) => {
