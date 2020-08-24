@@ -3,6 +3,7 @@ import classes from './Auth.module.css'
 import Button from '../../components/UI/Button/Button'
 import Input from '../../components/UI/Input/Input'
 import is from 'is_js'
+import axios from 'axios'
 
 export default class Auth extends React.Component {
 
@@ -36,12 +37,32 @@ export default class Auth extends React.Component {
         }
     }
 
-    loginHandler = () => {
-
+    loginHandler = async () => {
+        try {
+            const authData = {
+                email: this.state.formControls.email.value,
+                password: this.state.formControls.password.value,
+                returnSecureToken: true
+            }
+            const resonse = await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDRSPeeA0eMODZSd-yU9iqwDnGQ-vFhigo`, authData)
+            console.log(resonse.data)
+        } catch (error) {
+            console.log(error)
+        }
     }
     
-    registerHandler = () => {
-    
+    registerHandler = async () => {
+        const authData = {
+            email: this.state.formControls.email.value,
+            password: this.state.formControls.password.value,
+            returnSecureToken: true
+        }
+        try {
+            const resonse = await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDRSPeeA0eMODZSd-yU9iqwDnGQ-vFhigo`, authData)
+            console.log(resonse.data)
+        } catch (error) {
+            console.log(error)
+        }
     }
     
     submitHandler = (event) => {
