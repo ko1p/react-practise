@@ -5,23 +5,41 @@ import axios from 'axios'
 
 export default class QuizList extends React.Component {
 
+    state = {
+        quizes: []
+    }
+
     renderQuizes = () => {
         return(
-            [1, 2, 3].map((quiz, index) => {
+            this.state.quizes.map((quiz) => {
                 return(
-                <li key={index}>
-                    <NavLink to={'/quiz/' + quiz}>Тест {quiz}</NavLink>
+                <li key={quiz.id}>
+                    <NavLink to={'/quiz/' + quiz.id}>{quiz.name}</NavLink>
                 </li>
                 )
             })
         )
     }
 
-    componentDidMount() {
-        axios.get('https://reat-quiz-ab324.firebaseio.com/quiz.json')
-            .then((res) => console.log(res))
-        // fetch('https://reat-quiz-ab324.firebaseio.com/quiz.json')
-        //     .then((res) => console.log(res))
+    async componentDidMount() {
+        try {
+            const response = await axios.get('https://reat-quiz-ab324.firebaseio.com/quizes.json')
+
+            const quizes = [];
+            Object.keys(response.data).forEach((key, index) => {
+                quizes.push({
+                    id: key,
+                    name: `Тест №${index + 1}`
+                })
+            })
+
+            this.setState({
+                quizes
+            })
+        } catch (e) {
+            console.log(e)
+        }
+        
     }
 
     render() {
