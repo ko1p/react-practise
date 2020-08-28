@@ -6,7 +6,6 @@ import {BrowserRouter} from 'react-router-dom'
 import {createStore, applyMiddleware, compose} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
-
 import rootReducer from './store/reducers/rootReducer'
 import registerServiceWorker from './registerServiceWorker'
 
