@@ -1,5 +1,13 @@
 import axios from '../../axios/axios-quize'
-import {FETCH_QUIZES_START, FETCH_QUIZES_SUCCESS, FETCH_QUIZES_ERROR, FETCH_QUIZ_SUCCESS} from '../actions/actionTypes'
+import {
+    FETCH_QUIZES_START, 
+    FETCH_QUIZES_SUCCESS, 
+    FETCH_QUIZES_ERROR, 
+    FETCH_QUIZ_SUCCESS, 
+    FINISH_QUIZ,
+    QUIZE_NEXT_QUESTION,
+    RETRY_QUIZ
+} from '../actions/actionTypes'
 
 export function fetchQuizes() {
     return async dispatch => {
@@ -14,7 +22,6 @@ export function fetchQuizes() {
                     name: `Тест №${index + 1}`
                 })
             })
-
             dispatch(fetchQuizesSuccess(quizes))
         } catch (e) {
             dispatch(fetchQuizesError(e))
@@ -61,4 +68,80 @@ export function fetchQuizesError(e) {
         type: FETCH_QUIZES_ERROR,
         error: e
     }
+}
+
+export function quizeAnswerClick(answerId) {    
+    return (dispatch, getState) => {
+        const state = getState().quiz
+
+        if (state.answerState) {
+            const key = Object.keys(state.answerState)[0]
+            if (state.answerState[key] === 'success') {
+              return
+            }
+          }
+      
+          const question = state.quiz[state.activeQuestion]
+          const results = state.results
+      
+          if (question.rightAnswerId === answerId) {
+            if (!results[question.id]) {
+              results[question.id] = 'success'
+            }
+
+            dispatch(quizeSetState({[answerId]: 'success'}, results))      
+      
+            const timeout = window.setTimeout(() => {
+              if (isQuizFinished(state)) {
+                  dispatch(finishQuiz())
+
+                // this.setState({
+                //   isFinished: true
+                // })
+              } else {
+                  dispatch(quizNextQuestion(state.activeQuestion + 1))
+
+                // this.setState({
+                //   activeQuestion: this.state.activeQuestion + 1,
+                //   answerState: null
+                // })
+              }
+              window.clearTimeout(timeout)
+            }, 1000)
+          } else {
+            results[question.id] = 'error'
+
+            dispatch(quizeSetState({[answerId]: 'error'}, results))      
+          }
+    }    
+}
+
+export function quizeSetState(answerState, results) {
+    return {
+        type: 'QUIZ_SET_STATE',
+        answerState, results
+    }
+}
+
+export function finishQuiz() {
+    return {
+        type: FINISH_QUIZ
+    }
+}
+
+export function quizNextQuestion(activeQuestion) {
+    return {
+        type: QUIZE_NEXT_QUESTION,
+        activeQuestion
+    } 
+}
+
+function isQuizFinished(state) {
+    return state.activeQuestion + 1 === state.quiz.length    
+}
+
+export function retryQuiz() {
+    return {
+        type: RETRY_QUIZ
+    }    
 }
