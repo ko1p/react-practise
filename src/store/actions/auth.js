@@ -28,10 +28,8 @@ export function auth(email, password, isLogin) {
             localStorage.setItem('expirationDate', expirationDate)
 
             dispatch(authSuccess(data.idToken))
-
             dispatch(autoLogout(data.expiresIn))
 
-            console.log(response.data, localStorage.token, localStorage.userId, localStorage.expirationDate)
         } catch (error) {
             console.log(error)
         }
@@ -63,5 +61,18 @@ export function logout() {
 }
 
 export function autoLogin() {
+    return dispatch => {
+        const token = localStorage.getItem('token')
 
+        if (!token) {
+            dispatch(logout())
+        } else {
+            const expirationDate = new Date(localStorage.getItem('expirationDate'))
+            if (expirationDate <= new Date()) {
+                dispatch(authSuccess(token))
+                dispatch(autoLogout((expirationDate.getTime() - new Date().getTime())) / 1000)
+            }
+
+        }
+    }
 }
