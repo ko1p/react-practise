@@ -3,78 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7cc1a16b-487c-46b1-99d1-b5bd09c0f97d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/.idea/react-practise.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/jest/cssTransform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/jest/fileTransform.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/paths.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/webpack.config.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/webpack.config.prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/config/webpackDevServer.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/scripts/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/scripts/start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/scripts/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/axios/axios-quize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/ActiveQuiz/ActiveQuiz.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/ActiveQuiz/ActiveQuiz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/ActiveQuiz/AnswersList/AnswersList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/ActiveQuiz/AnswersList/AnswersList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/FinishedQuiz/FinishedQuiz.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/FinishedQuiz/FinishedQuiz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/Navigation/Drawer/Drawer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/Navigation/MenuToggle/MenuToggle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/Navigation/MenuToggle/MenuToggle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Backdrop/Backdrop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Backdrop/Backdrop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Button/Button.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Button/Button.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Input/Input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Input/Input.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Loader/Loader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Loader/Loader.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Select/Select.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/components/UI/Select/Select.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/Auth/Auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/Auth/Auth.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/Quiz/Quiz.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/Quiz/Quiz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/QuizCreator/QuizCreator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/QuizCreator/QuizCreator.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/QuizeList/QuizeList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/containers/QuizeList/QuizeList.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/form/formFramework.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/hoc/Layout/Layout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/hoc/Layout/Layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/registerServiceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/store/actions/actionTypes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/store/actions/createQuiz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/store/actions/quiz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/store/reducers/create.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/store/reducers/quiz.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-practise/src/store/reducers/rootReducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +49,8 @@
       <updated>1598206856485</updated>
       <workItem from="1598206860508" duration="66000" />
       <workItem from="1598860575343" duration="483000" />
-      <workItem from="1598882936150" duration="3644000" />
+      <workItem from="1598882936150" duration="4023000" />
+      <workItem from="1598946556987" duration="1958000" />
     </task>
     <servers />
   </component>
